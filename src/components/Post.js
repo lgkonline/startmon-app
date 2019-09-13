@@ -24,7 +24,7 @@ export function Post({ title, link }) {
                     className="Post-image"
                     style={{ backgroundImage: (openGraph && openGraph.image) ? `url(${openGraph.image})` : "" }}
                 />
-                <h4>{title}</h4>
+                <h4 className="Post-title">{title}</h4>
             </a>
         </div>
     );

@@ -14,10 +14,10 @@ class FeedSource {
     public function getObject() {
         $content = file_get_contents($this->url);
 
-        if (strpos("xml", $this->format) !== false) {
+        // if (strpos("xml", $this->format) !== false) {
             // Is XML
             return simplexml_load_string($content);
-        }
+        // }
     }
 
     public function getFeedResponse() {

@@ -35,10 +35,14 @@ code {
 }
 
 .Feed-title {
+    margin-top: 0;
+}
+
+.Feed-link {
     color: #5d6274;
     text-decoration: none;
 }
-.Feed-title:hover {
+.Feed-link:hover {
     color: inherit;
 }
 
@@ -53,6 +57,10 @@ code {
 }
 .Post:active {
     transform: scale(.98);
+}
+
+.Post-title {
+    margin-bottom: 0;
 }
 
 .Post-image {

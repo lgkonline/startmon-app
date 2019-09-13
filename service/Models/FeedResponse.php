@@ -15,7 +15,15 @@ class FeedResponse {
 
         try {
             if ($feedSource->format == "xml-atom") {
-                $this->title = "Test Atom";
+                if (isset($this->_raw->title)) {
+                    $this->title = $this->_raw->title->__toString();
+                }
+
+                $this->link = Helpers::GetAlternateLink($this->_raw->link);
+
+                if (isset($this->_raw->entry) && count($this->_raw->entry) > 0) {
+                    $this->latestPost = new Post($this->_raw->entry[0], $feedSource);
+                }
             }
 
             if ($feedSource->format == "xml") {
@@ -26,12 +34,10 @@ class FeedResponse {
                     $this->link = $this->_raw->channel->link->__toString();
                 }
                 if (isset($this->_raw->channel->item) && count($this->_raw->channel->item) > 0) {
-                    $this->latestPost = new Post($this->_raw->channel->item[0]);
+                    $this->latestPost = new Post($this->_raw->channel->item[0], $feedSource);
                 }
             }
         }
-        catch(\Exception $ex) {
-
-        }
+        catch(\Exception $ex) {}
     }
 }

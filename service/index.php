@@ -1,11 +1,12 @@
 <?php
 
-define("ALLOWED_ORIGINS", ["http://localhost:3000", "http://192.168.3.117:3000"]);
+define("ALLOWED_ORIGINS", ["http://localhost:3000", "http://192.168.3.117:3000", "http://43k.patorg.org:3000"]);
 
 if (isset($_SERVER["HTTP_ORIGIN"]) && in_array($_SERVER["HTTP_ORIGIN"], ALLOWED_ORIGINS)) {
     header("Access-Control-Allow-Origin: " . $_SERVER["HTTP_ORIGIN"]);
 }
 
+require __DIR__ . "/Classes/Helpers.php";
 require __DIR__ . "/Classes/Controller.php";
 
 // Autoload Controller classes
