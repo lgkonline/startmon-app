@@ -2,7 +2,7 @@
 
 ## PHP service
 You need to have [Docker](https://www.docker.com/get-started) installed.  
-Then run `docker-compose up --build`. This application is then running on [http://localhost:4000](http://localhost:4000).
+Then run `docker-compose up`. This application is then running on [http://localhost:4000](http://localhost:4000).
 
 ## React app
 [Node.js + NPM](https://nodejs.org) has to be installed.

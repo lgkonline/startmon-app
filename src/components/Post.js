@@ -19,16 +19,13 @@ export function Post({ title, link }) {
 
     return (
         <div>
-            {(openGraph && openGraph.image) &&
-                <img
-                    src={openGraph.image}
-                    alt={openGraph.title}
-                    style={{
-                        width: "300px"
-                    }}
+            <a href={link} className="Post" target="_blank" rel="noopener noreferrer">
+                <div
+                    className="Post-image"
+                    style={{ backgroundImage: (openGraph && openGraph.image) ? `url(${openGraph.image})` : "" }}
                 />
-            }
-            <h4><a href={link} target="_blank" rel="noopener noreferrer">{title}</a></h4>
+                <h4>{title}</h4>
+            </a>
         </div>
     );
 }

@@ -8,8 +8,10 @@ function App() {
     const [feeds, setFeeds] = useState([]);
 
     const feedSlugs = [
-        "designtagebuch",
-        "neue-st"
+        // "designtagebuch",
+        // "neue-st",
+        // "t3n",
+        "felixtense"
     ];
 
     useEffect(() => {
@@ -32,9 +34,13 @@ function App() {
 
     return (
         <div className="App">
-            {feeds.map((feed, index) =>
-                <Feed key={index} {...feed} />
-            )}
+            <h1 className="App-headline">Your feeds</h1>
+
+            <div className="App-feeds">
+                {feeds.map((feed, index) =>
+                    <Feed key={index} {...feed} />
+                )}
+            </div>
         </div>
     );
 }
