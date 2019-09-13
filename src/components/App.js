@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Feed } from "./Feed";
 
-export const apiUrl = "http://43k.patorg.org:4000/service";
+export const apiUrl = "http://localhost:4000/service";
 
 function App() {
     const [feeds, setFeeds] = useState([]);
