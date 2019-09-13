@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Feed } from "./Feed";
 
-export const apiUrl = "http://localhost:90/wegdamit/sm-app/service";
+export const apiUrl = "http://localhost:4000/service";
 
 function App() {
     const [feeds, setFeeds] = useState([]);
